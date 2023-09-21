@@ -15,24 +15,27 @@ const formatCardId = (cardId) => {
 const displayLinks = (savedForLater) => {
   // get a reference to savedLinks ul located in saved.html
   let savedLinks = document.getElementById("savedLinks");
-  // reset the contents
-  savedLinks.innerHTML = "";
-  // if there are contents in the savedForLater array
-  if (savedForLater) {
-    savedForLater.forEach((link) => {
-      // create a new list elment
-      let li = document.createElement("li");
-      // give the list element the relevant bootstrap class name for styling
-      li.className = "list-group-item";
-      // create an anchor element to hold the link
-      let a = document.createElement("a");
-      // use template literals to create a link to the card in index.html dynamically
-      a.href = `index.html#${link.id}`;
-      // use the formatCardId function to create a label for the anchor element
-      a.innerText = formatCardId(link.id);
-      // append list and anchor element to savedLinks
-      savedLinks.appendChild(li).appendChild(a);
-    });
+  // Check if savedLinks is found
+  if (savedLinks) {
+    // reset the contents if o
+    savedLinks.innerHTML = "";
+    // check that savedForLater is not an empty array
+    if (savedForLater) {
+      savedForLater.forEach((link) => {
+        // create a new list elment
+        let li = document.createElement("li");
+        // give the list element the relevant bootstrap class name for styling
+        li.className = "list-group-item";
+        // create an anchor element to hold the link
+        let a = document.createElement("a");
+        // use template literals to create a link to the card in index.html dynamically
+        a.href = `index.html#${link.id}`;
+        // use the formatCardId function to create a label for the anchor element
+        a.innerText = formatCardId(link.id);
+        // append list and anchor element to savedLinks
+        savedLinks.appendChild(li).appendChild(a);
+      });
+    }
   }
 };
 
@@ -64,7 +67,7 @@ const addLink = (item) => {
 const checkStorage = () => {
   document.addEventListener("DOMContentLoaded", () => {
     // get saved items from local storage
-    let savedItems = JSON.parse(localStorage.getItem("savedForLater"));
+    let savedItems = JSON.parse(localStorage.getItem("savedForLater")) || [];
     displayLinks(savedItems); // display saved items on page
   });
 };
