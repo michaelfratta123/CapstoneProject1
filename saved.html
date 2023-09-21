@@ -1,0 +1,73 @@
+<!-- This is a saved for later page -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add link for Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- Add link for stylesheet after Bootstrap, to override Boostrap if need be -->
+    <link href="css/saved.css" rel="stylesheet" type="text/css" />
+    <title>Saved for Later - Capstone Project 1</title>
+  </head>
+  <!-- Make all body background dark - otherwise there is whitespace between rows -->
+  <body class="bg-dark">
+    <div class="container">
+      <!-- Have the header span the whole 12 columns, with a vertical padding of 3 -->
+      <header class="col-md-12 py-3">
+        <!-- First include a nav bar to link to the other pages -->
+        <nav class="navbar bg-dark">
+          <!-- Use nav-pills to highlight the selected tab -->
+          <ul class="nav nav-pills p-3">
+            <!-- Each nav-item to have light text on a dark background -->
+            <li class="nav-item">
+              <a href="index.html" class="nav-link text-light bg-dark">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link text-light bg-dark"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="references.html" class="nav-link text-light bg-dark"
+                >References</a
+              >
+            </li>
+            <!-- Select the active link for this page and change background too -->
+            <li class="nav-item">
+              <a href="saved.html" class="nav-link active bg-secondary"
+                >Saved for later</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <hr />
+      </header>
+      <!-- h1 full 12 cols, center text, padding, margin bottom of 4, light text against dark background -->
+      <h1 class="col-md-12 text-center p-3 mb-4 text-light bg-dark">
+        Saved for later
+      </h1>
+      <!-- Horizontal rule for better separation between h1 and rest of the page -->
+      <hr />
+      <div class="container">
+        <h4 class="text-center text-light pt-3">
+          You have saved the following links:
+        </h4>
+        <div class="card mx-auto" style="width: 18rem">
+          <ul class="list-group p-1" id="savedLinks"></ul>
+        </div>
+      </div>
+      <!-- Include a footer with copyright; light text and a padding of 5 -->
+      <footer>
+        <p class="text-light p-5">Copyright 2023 Michael Fratta</p>
+      </footer>
+    </div>
+    <!-- Load javascript file -->
+    <script src="js/saved.js"></script>
+  </body>
+</html>

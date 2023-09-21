@@ -1,0 +1,205 @@
+<!-- This includes a contact form -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add link for Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- Add link for stylesheet after Bootstrap, to override Boostrap if need be -->
+    <link href="css/contact.css" rel="stylesheet" type="text/css" />
+    <!-- Load javascript file -->
+    <script src="js/formValidation.js"></script>
+    <title>Contact - Capstone Project 1</title>
+  </head>
+  <!-- Make all body background dark - otherwise there is whitespace between rows -->
+  <body class="bg-dark">
+    <div class="container">
+      <!-- Have the header span the whole 12 columns, with a vertical padding of 3 -->
+      <header class="col-md-12 py-3">
+        <!-- First include a nav bar to link to the other pages -->
+        <nav class="navbar bg-dark">
+          <!-- Use nav-pills to highlight the selected tab -->
+          <ul class="nav nav-pills p-3">
+            <!-- Each nav-item to have light text on a dark background -->
+            <li class="nav-item">
+              <a href="index.html" class="nav-link text-light bg-dark">Home</a>
+            </li>
+            <!-- Select the active link for this page and change background too -->
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link active bg-secondary"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="references.html" class="nav-link text-light bg-dark"
+                >References</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="saved.html" class="nav-link text-light bg-dark"
+                >Saved for later</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <hr />
+      </header>
+      <!-- h1 full 12 cols, center text, padding, margin bottom of 4, light text against dark background -->
+      <h1 class="col-md-12 text-center p-3 mb-4 text-light bg-dark">Contact</h1>
+      <!-- Horizontal rule for better separation between h1 and rest of the page -->
+      <hr />
+      <div class="container">
+        <!-- add an h3 to request a message be left, with light text and some padding -->
+        <h3 class="text-light p-3">Leave a message!</h3>
+        <!-- 
+             Example forms from https://getbootstrap.com/docs/4.3/components/forms/ 
+             Using a horizontal form format with form-group row.
+             'action' makes the submit button 'work' (once it's properly plugged in).
+             'onsubmit' is to rturn the js contained in formValidation.js
+        -->
+        <form
+          name="contactForm"
+          onsubmit="return validateForm()"
+          action="/action_page.php"
+        >
+          <!-- radio buttons for whether user expects a reply or not -->
+          <!-- No reply expected -->
+          <div class="form-check m-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="reply"
+              id="noReply"
+              value="noReply"
+              checked
+            />
+            <label class="form-check-label text-light" for="noReply">
+              I do not need a reply
+            </label>
+          </div>
+          <!-- reply expected -->
+          <div class="form-check m-3">
+            <input
+              class="form-check-input"
+              type="radio"
+              name="reply"
+              id="yesReply"
+              value="yesReply"
+            />
+            <label class="form-check-label text-light" for="yesReply">
+              I need a reply
+            </label>
+          </div>
+          <!-- Creating a row per user input in the form with a bit of margin 
+               for better spacing around each input -->
+          <!-- Input email address (required) -->
+          <div class="form-group m-1 row">
+            <label for="inputEmail" class="col-md-1 col-form-label text-light"
+              >Email</label
+            >
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="inputEmail"
+                placeholder="Enter email address (required)"
+              />
+            </div>
+          </div>
+          <!-- Input a phone number (not required) -->
+          <div class="form-group m-1 row">
+            <label for="inputNumber" class="col-md-1 col-form-label text-light"
+              >Number</label
+            >
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="inputNumber"
+                placeholder="Enter phone number"
+              />
+            </div>
+          </div>
+          <!-- Input a name (not required) -->
+          <div class="form-group m-1 row">
+            <label for="inputName" class="col-md-1 col-form-label text-light"
+              >Name</label
+            >
+            <div class="col-md-6">
+              <input
+                type="text"
+                class="form-control"
+                id="inputName"
+                placeholder="Enter name"
+              />
+            </div>
+          </div>
+          <!-- Input a message (not required) -->
+          <div class="form-group m-1 row">
+            <label for="inputMessage" class="col-md-1 col-form-label text-light"
+              >Message</label
+            >
+            <div class="col-md-6">
+              <textarea
+                class="form-control"
+                id="inputMessage"
+                rows="3"
+                placeholder="Enter a message (required)"
+              ></textarea>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="form-group row">
+            <!-- align submit button with inputs above -->
+            <div class="col-md-2 m-1">
+              <!-- Distance submit button a bit from the top of the form,
+                   with mt-2 which stands for margin-top 2, and send to end of col3 -->
+              <button type="submit" class="btn btn-light mt-2 float-end">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+        <!-- add comment functionality to meet requirements -->
+        <h3 class="text-light p-3 mt-5">... Or leave a comment!</h3>
+        <form name="commentForm" onsubmit="return submitComment()">
+          <!-- Comment input -->
+          <div class="form-group m-1 row">
+            <label for="inputComment" class="col-md-1 col-form-label text-light"
+              >Comment</label
+            >
+            <div class="col-md-6">
+              <textarea
+                class="form-control"
+                id="inputComment"
+                rows="3"
+                placeholder="Enter a comment (required)"
+              ></textarea>
+            </div>
+          </div>
+          <!-- Submit button -->
+          <div class="form-group row">
+            <div class="col-md-2 m-1">
+              <button type="submit" class="btn btn-light mt-2 float-end">
+                Submit
+              </button>
+            </div>
+          </div>
+        </form>
+        <!-- Display existing comment (if any - see comment.js) -->
+        <div id="commentDisplay" class="text-light p-3"></div>
+      </div>
+      <!-- Include a footer with copyright; light text and a padding of 5 -->
+      <footer>
+        <p class="text-light p-5">Copyright 2023 Michael Fratta</p>
+      </footer>
+    </div>
+    <script src="js/comment.js"></script>
+  </body>
+</html>

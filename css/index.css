@@ -1,0 +1,110 @@
+/* increase font size in navbar responsively */
+.navbar {
+  font-size: larger;
+}
+
+/* add a little bit of responsive padding between nav items */
+.nav-item {
+  padding: 0.1rem;
+}
+
+/* add a grey background to each nav item on cursor hover */
+.nav-item:hover {
+  background-color: gray;
+  border-radius: 7%;
+}
+
+/* turn horizontal rule white so it is visible against dark background */
+hr {
+  color: white;
+}
+
+/* Apply style to the 'cards' (each drum part row/section) so that they
+   have a border and a decent margin - as well as a grey background. */
+.card {
+  border-width: thick;
+  border-color: darkgrey;
+  border-style: double;
+  margin: 4%;
+}
+
+/* remove standard blue underline for links */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* make it easier to see what link is being pointed at by
+   making text bolder and grey, on hover*/
+.list-group-item:hover {
+  color: grey;
+  font-weight: bolder;
+}
+
+/* add style for heart button */
+.heart-button {
+  background-color: transparent; /* Set the background color of the button to transparent */
+  border: none; /* Add a border with the desired color */
+  font-size: 24px; /* Set the size of the heart icon */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  padding: 8px; /* Add some padding to give space around the heart icon */
+}
+
+.heart-button.liked i {
+  color: red; /* Change color when liked */
+}
+
+/* Resize and position all drum part images responsively,
+     so they remain well sized and positioned on different size screens.*/
+.image {
+  width: 90%;
+  margin: 5%;
+}
+
+.avatar {
+  width: 50%;
+  margin: 5%;
+}
+
+/* Found use of hover property here:
+https://www.w3schools.com/cssref/css3_pr_transition.php
+This reduces the opacity of the drum part images by 50%
+when placing the mouse cursor over them */
+.image:hover {
+  opacity: 50%;
+}
+
+/* Apply styling to the drum part descriptions.*/
+.description {
+  font-size: 120%;
+  font-weight: bolder;
+  margin-top: 10%;
+  padding: 0.5em;
+  text-align: justify;
+}
+
+/* add some responsive margin and justify text for better spacing,
+   and make text a bit bolder for better legibility */
+p {
+  margin: 4%;
+  text-align: justify;
+  font-weight: 500;
+}
+
+/* position text above the image, give it some padding, center the text,
+   make it larger, and aligin it with the bottom of the image with margin-top */
+.overlay-text {
+  position: absolute;
+  padding: 23%;
+  text-align: center;
+  font-size: large;
+  font-weight: bolder;
+  margin-top: 45%;
+}
+
+/* responsively make font size small and put text on right hand side of the page
+using class reference here due to setting styles for p element above */
+.footer {
+  font-size: small;
+  text-align: end;
+}

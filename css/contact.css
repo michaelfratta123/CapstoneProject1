@@ -1,0 +1,26 @@
+/* increase font size in navbar responsively */
+.navbar {
+  font-size: larger;
+}
+
+/* add a little bit of responsive padding between nav items */
+.nav-item {
+  padding: 0.1rem;
+}
+
+/* add a grey background to each nav item on cursor hover */
+.nav-item:hover {
+  background-color: gray;
+  border-radius: 7%;
+}
+
+/* turn horizontal rule white so it is visible against dark background */
+hr {
+  color: white;
+}
+
+/* responsively make font size small and put text on right hand side of the page */
+footer {
+  font-size: small;
+  text-align: end;
+}

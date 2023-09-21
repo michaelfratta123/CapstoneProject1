@@ -1,0 +1,426 @@
+<!-- This is the homepage -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Add link for Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <!-- Add link for stylesheet after Bootstrap, to override Boostrap if need be -->
+    <link href="css/index.css" rel="stylesheet" type="text/css" />
+    <!-- Add link for font-awsesome icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <!-- Load javascript file -->
+    <script src="js/sounds.js"></script>
+    <title>Home - Capstone Project 1</title>
+    <script src="js/saved.js"></script>
+  </head>
+  <!-- Make all body background dark - otherwise there is whitespace between rows -->
+  <body class="bg-dark">
+    <div class="container">
+      <!-- Have the header span the whole 12 columns, with a vertical padding of 3 -->
+      <header class="col-md-12 py-3">
+        <!-- First include a nav bar to link to the other pages -->
+        <nav class="navbar bg-dark">
+          <!-- Use nav-pills to highlight the selected tab -->
+          <ul class="nav nav-pills p-3">
+            <!-- Each nav-item to have light text on a dark background -->
+            <li class="nav-item">
+              <!-- Select the active link for this page and change background too -->
+              <a href="index.html" class="nav-link active bg-secondary">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="contact.html" class="nav-link text-light bg-dark"
+                >Contact</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="references.html" class="nav-link text-light bg-dark"
+                >References</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="saved.html" class="nav-link text-light bg-dark"
+                >Saved for later</a
+              >
+            </li>
+          </ul>
+        </nav>
+        <!-- Horizontal rule for better separation between navbar and rest of the page -->
+        <hr />
+      </header>
+      <!-- h1 full 12 cols, center text, padding, margin bottom of 4, light text against dark background -->
+      <h1 class="col-md-12 text-center p-3 mb-4 text-light bg-dark">
+        A Brief Explanation of Drums
+      </h1>
+      <!-- Horizontal rule for better separation between h1 and rest of the page -->
+      <hr />
+      <div class="container">
+        <!-- add a list to fulfil requirements -->
+        <h4 class="text-center text-light pt-3">
+          Links to different components of a drum kit below:
+        </h4>
+        <!-- make it a card to keep with the style of the page. Center it and set the width -->
+        <div class="card mx-auto" style="width: 18rem">
+          <ul class="list-group p-1">
+            <!-- link to different parts of the page -->
+            <li class="list-group-item">
+              <a href="#crashCymbal">Crash Cymbal</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#floorTom">Floor Tom</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#hiHat">Hi Hat</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#kickDrum">Kick Drum</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#rideCymbal">Ride Cymbal</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#snareDrum">Snare Drum</a>
+            </li>
+            <li class="list-group-item">
+              <a href="#tomDrum">Tom Drum</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Add a card per drum piece -->
+        <!-- crash cymbal -->
+        <div class="card" id="crashCymbal">
+          <div class="card-body">
+            <div class="row crash">
+              <div class="col-md-3">
+                <!-- found out how to play sound onclick here:
+                     https://stackoverflow.com/questions/34696208/play-a-sound-on-image-click-in-html
+                -->
+                <a onclick="document.getElementById('crashAudio').play();">
+                  <img
+                    class="image"
+                    alt="A crash cymbal"
+                    src="images/crash.png"
+                  />
+                  <audio id="crashAudio" src="sounds/crash.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a crash cymbal - click to hear its sound!
+                </h3>
+                <!-- add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('crashCymbal')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  A crash cymbal is a type of cymbal that produces a loud, sharp
+                  "crash" and is used mainly for occasional accents, as opposed
+                  to a ride cymbal. It can be mounted on a stand and played with
+                  a drum stick, or by hand in pairs. One or two crash cymbals
+                  are a standard part of a drum kit. Suspended crash cymbals are
+                  also used in bands and orchestras, either played with a
+                  drumstick or rolled with a pair of mallets to produce a
+                  slower, swelling crash. Sometimes a drummer may hit two
+                  different crash cymbals in a kit at the same time to produce a
+                  very loud accent, usually in rock music (Wikipedia, 2023a).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- floor tom -->
+        <div class="card" id="floorTom">
+          <div class="card-body">
+            <div class="row floor">
+              <div class="col-md-3">
+                <a onclick="document.getElementById('floorAudio').play();">
+                  <img class="image" alt="A floor tom" src="images/floor.png" />
+                  <audio id="floorAudio" src="sounds/floor.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a floor tom - click to hear its sound!
+                </h3>
+                <!-- Add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('floorTom')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  A floor tom or low tom is a double-headed tom-tom drum which
+                  usually stands on the floor on three legs. However, they can
+                  also be attached to a cymbal stand with a drum clamp, or
+                  supported by a rim mount. It is a cylindrical drum without
+                  snare wires, and tend to produce a booming, resonant sound
+                  which can vary in pitch (Wikipedia, 2023b).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- hi hat -->
+        <div class="card" id="hiHat">
+          <div class="card-body">
+            <div class="row hat">
+              <div class="col-md-3">
+                <a onclick="document.getElementById('hatAudio').play();">
+                  <img
+                    class="image"
+                    alt="A kind of cymbal called a hi hat"
+                    src="images/hat.png"
+                  />
+                  <audio id="hatAudio" src="sounds/hat.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a kind of cymbal known as a hi hat - click to hear its
+                  sound!
+                </h3>
+                <!-- add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('hiHat')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  A hi-hat (hihat, high-hat, etc.) is a combination of two
+                  cymbals and a pedal, all mounted on a metal stand. It is a
+                  part of the standard drum kit used by drummers in many styles
+                  of music including rock, pop, jazz, and blues. Hi-hats consist
+                  of a matching pair of small to medium-sized cymbals mounted on
+                  a stand, with the two cymbals facing each other. The bottom
+                  cymbal is fixed and the top is mounted on a rod which moves
+                  the top cymbal toward the bottom one when the pedal is
+                  depressed (a hi-hat that is in this position is said to be
+                  "closed" or "closed hi-hats") (Wikipedia, 2022).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- kick -->
+        <div class="card" id="kickDrum">
+          <div class="card-body">
+            <div class="row kick">
+              <div class="col-md-3">
+                <a onclick="document.getElementById('kickAudio').play();">
+                  <img class="image" alt="a kick drum" src="images/kick.png" />
+                  <audio id="kickAudio" src="sounds/kick.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a kick drum - click to hear its sound!
+                </h3>
+                <!-- add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('kickDrum')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  Also known as a “bass drum.” A kick drum is a large, low- or
+                  indefinitely pitched drum that is played using one or more
+                  mallets or beaters attached to foot-actuated pedal mechanisms.
+                  Typically the drum is mounted vertically, and is the
+                  lowest-pitched instrument in a drum kit. Kick drum widths
+                  (diameters) range from 16 to 28 inches, with depths from 14 to
+                  18 inches. In many cases, the kick drum also serves as a base
+                  for tom-tom mounts. Typically, kit kick drums are heavily
+                  muffled with blankets, pillows, or other materials in order to
+                  control resonance and ringing (Sweetwater, 2010).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ride cymbal -->
+        <div class="card" id="rideCymbal">
+          <div class="card-body">
+            <div class="row ride">
+              <div class="col-md-3">
+                <a onclick="document.getElementById('rideAudio').play();">
+                  <img
+                    class="image"
+                    alt="a ride cymbal"
+                    src="images/ride.png"
+                  />
+                  <audio id="rideAudio" src="sounds/ride.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a ride cymbal - click to hear its sound!
+                </h3>
+                <!-- add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('rideCymbal')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  The ride cymbal is a cymbal of material sustain used to
+                  maintain a beat in music. A standard in most drum kits, the
+                  ride's function is to maintain a steady pattern," sometimes
+                  called a ride pattern, rather than provide the accent of a
+                  crash cymbal. It is normally placed on the extreme right (or
+                  dominant hand) of a drum set, above the floor tom. It is often
+                  described as delivering a "shimmering" sound when struck
+                  soundly with a drumstick, and a clear ping when struct atop
+                  its bell (Wikipedia, 2023c).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- snare drum -->
+        <div class="card" id="snareDrum">
+          <div class="card-body">
+            <div class="row snare">
+              <div class="col-md-3">
+                <a onclick="document.getElementById('snareAudio').play();">
+                  <img
+                    class="image"
+                    alt="a snare drum"
+                    src="images/snare.png"
+                  />
+                  <audio id="snareAudio" src="sounds/snare.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a snare drum - click to hear its sound!
+                </h3>
+                <!-- add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('snareDrum')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  The snare (or side drum) is a percussion instrument that
+                  produces a sharp staccato sound when the head is struck with a
+                  drum stick, due to the use of a series of stiff wires held
+                  under tension against the lower skin. Snare drums are often
+                  used in orchestras, concert bands, marching bands, parades,
+                  drumlines, drum corps, and more. It is one of the central
+                  pieces in a drum set, a collection of percussion instruments
+                  designed to be played by a seated drummer and used in many
+                  genres of music (Wikipedia, 2020).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- tom drum -->
+        <div class="card" id="tomDrum">
+          <div class="card-body">
+            <div class="row tom">
+              <div class="col-md-3">
+                <a onclick="document.getElementById('tomAudio').play();">
+                  <img class="image" alt="a tom drum" src="images/tom.png" />
+                  <audio id="tomAudio" src="sounds/tom.mp3"></audio>
+                </a>
+              </div>
+              <div class="col-md-4">
+                <h3 class="description">
+                  This is a tom drum - click to hear its sound!
+                </h3>
+                <!-- add save for later button -->
+                <button
+                  class="btn btn-secondary ms-2"
+                  onclick="addLink('tomDrum')"
+                >
+                  Save for Later
+                </button>
+              </div>
+              <div class="col-md-5">
+                <p>
+                  A tom drum (also known as a tom-tom) is a cylindrical drum
+                  with no snares, named from the Anglo-Indian and Sinhala
+                  language.[1] It was added to the drum kit in the early part of
+                  the 20th century. Most toms range in size between 6 and 20
+                  inches (15 and 51 cm) in diameter, though floor toms can go as
+                  large as 24 inches (61 cm) (Wikipedia, 2023d).
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <!-- Insert testimonial here.
+             Example taken from : https://getbootstrap.com/docs/5.3/components/card/ -->
+        <!-- give h5 some better spacing from the top hr -->
+        <h5 class="text-light p-1 mt-5">A testimonial...</h5>
+        <!-- set a width to the card so that it doesn't take the whole screen
+             and looks more like a testimonial -->
+        <div class="card p-3" style="width: 18rem">
+          <!-- Give image a rounded edge and dark background -->
+          <img
+            src="images/avatar.png"
+            class="card-img-top bg-dark rounded-circle"
+            alt="A generic avatar profile picture"
+          />
+          <!-- Overlay text on image to fulfil the requirements -->
+          <span class="overlay-text">John Doe says...</span>
+          <div class="card-body">
+            <!-- separate out text with dark background, some padding, margin, and rounded edge-->
+            <h5 class="card-title bg-dark text-light p-3 mt-1 rounded">
+              John Doe - an acquaintance
+            </h5>
+            <!-- give card text some margin top for better spacing -->
+            <p class="card-text mt-4">
+              <i
+                >"Michael's knowledge about drums is unparalleled... Thanks to
+                Wikipedia!"</i
+              >
+            </p>
+            <!-- include a like button to fulfil the requirements -->
+            <button class="heart-button" onclick="like()">
+              <i class="fas fa-heart"> Like me!</i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Include a footer with copyright; light text and a padding of 5 -->
+      <footer>
+        <p class="text-light p-5 footer">Copyright 2023 Michael Fratta</p>
+      </footer>
+    </div>
+    <!-- Load javascript files -->
+
+    <script src="js/liked.js"></script>
+  </body>
+</html>
